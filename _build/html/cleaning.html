@@ -397,7 +397,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -413,6 +415,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-data-cleaning-matters">Why Data Cleaning matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-data-quality-issues">Common Data Quality Issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-in-data-cleaning">Challenges in Data Cleaning</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -424,6 +436,43 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-cleaning">
 <h1>Data cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h1>
+<p>Data cleaning (also known as data cleansing) is the process of identifying and correcting (or removing) inconsistencies, errors and inaccuracies within a dataset. In a data science or data analysis project, this process is fundamental in ensuring a reliable and effective analysis, since it lands at the beginning of the pipeline. Data cleaning ensures that the data is accurate, consistent, and reliable.</p>
+<p>In essence, data cleaning involves identifying and resolving flaws within datasets by correcting, removing, or modifying records to meet quality standards suitable for analysis. It plays a critical role in data preprocessing and significantly influences how data will be modeled and interpreted.</p>
+<p>As an old commercial once said, “Power is nothing without control”. The same concept applies here. We can be the best data scientist, business analyst, AI engineer, statistician (or whatever role you prefer), but if we don’t have high-quality, clean and consistent data, all our models and predictions are worthless and completely useless.</p>
+<section id="why-data-cleaning-matters">
+<h2>Why Data Cleaning matters<a class="headerlink" href="#why-data-cleaning-matters" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Improved data quality</strong>: Cleaning data reduces errors, inconsistencies and missing values, leading to more accurate and reliable analysis.</p></li>
+<li><p><strong>Enhanced efficiency</strong>: High-quality data is easier and quicker to analyze, reducing the time and effort spent managing poor data quality.</p></li>
+<li><p><strong>Better decision-making</strong>: Clean and consistent data provides trustworthy insights, enabling organizations to make well-informed decisions rather than relying on outdated or incomplete data.</p></li>
+</ul>
+</section>
+<section id="common-data-quality-issues">
+<h2>Common Data Quality Issues<a class="headerlink" href="#common-data-quality-issues" title="Link to this heading">#</a></h2>
+<p>Data quality problems may arise from various sources, such as human errors, system failures, or issues during data integration. Typical data quality issues include:</p>
+<ol class="arabic simple">
+<li><p><strong>Missing values</strong>: Lack of some data or missing information can result in failure to make the right conclusions and can or else lead to creating a biased result. In order to handle it, different strategies can be adopted:</p>
+<ul class="simple">
+<li><p>Deleting incomplete records (in case they have minimal impact)</p></li>
+<li><p>Imputing values (by using estimated ones, like the mean, median or mode)</p></li>
+<li><p>Exploiting predictive modeling from the machine learning field to predict the input value</p></li>
+</ul>
+</li>
+<li><p><strong>Incorrect data types</strong>: Mismatched data types (e.g., strings in numerical fields) can hinder processing and analysis.</p></li>
+<li><p><strong>Anomalies and outliers</strong>: Extreme values can skew results and impact statistical accuracy. Detecting and either correcting, removing, or transforming extreme values preserves the accuracy of insights. Sometimes they may be found due to an error in data collection (e.g. if we have the variable <code class="docutils literal notranslate"><span class="pre">weight</span></code> represented in <code class="docutils literal notranslate"><span class="pre">kg</span></code> and we write down an observation in <code class="docutils literal notranslate"><span class="pre">g</span></code>, leading to an enourmous and anomal value with respect to other observations). Another common situation is related to some typos (e.g. we unintentionally add a 0 at the end of a number, thus recording a 10 time higher number). These anomalies are also known as spelling and typographical errors. Fixing typos or inaccurate values often involves validation checks or cross-referencing with trusted sources.</p></li>
+<li><p><strong>Duplicate data</strong>: Repeated entries can distort results, metrics and produce skewed results. Identifying and eliminating redundant records ensures data integrity and uniqueness.</p></li>
+<li><p><strong>Inconsistent formats</strong>: Disparities in formats (e.g., date formats, text casing) complicate data aggregation and comparison. Ensuring uniformity in formats such as dates, addresses, and phone numbers is essential for an easier analysis.</p></li>
+</ol>
+</section>
+<section id="challenges-in-data-cleaning">
+<h2>Challenges in Data Cleaning<a class="headerlink" href="#challenges-in-data-cleaning" title="Link to this heading">#</a></h2>
+<p>When trying to clean our source data, different problems can be faced:</p>
+<ul class="simple">
+<li><p>Large Volumes: Big datasets require scalable tools and efficient methods, due to their sheer size.</p></li>
+<li><p>Ongoing Nature: Cleaning is not a one-time task but a continuous process as new data is collected and integrated.</p></li>
+<li><p>Data Complexity: Data may come from different sources and have diverse formats: these multiple sources can be hard to reconcile.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,6 +520,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-data-cleaning-matters">Why Data Cleaning matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-data-quality-issues">Common Data Quality Issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-in-data-cleaning">Challenges in Data Cleaning</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
